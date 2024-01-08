@@ -1,13 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 
 const Navbar = () => {
     const [isNavOpen, setIsNavOpen] = useState(false);
 
-    const toggleNav = () => {
+    const toggleNav = (event) => {
+        // Prevent the click event from reaching the document when the modal is open
+        if (!isNavOpen) {
+            event.stopPropagation();
+        }
+
         setIsNavOpen(!isNavOpen);
     };
+
+    const closeNav = () => {
+        setIsNavOpen(false);
+    };
+
+    useEffect(() => {
+        const handleOutsideClick = (event) => {
+            if (isNavOpen && !event.target.closest('.nav-modal')) {
+                closeNav();
+            }
+        };
+
+        document.addEventListener('click', handleOutsideClick);
+
+        return () => {
+            document.removeEventListener('click', handleOutsideClick);
+        };
+    }, [isNavOpen]);
 
     return (
         <nav className={`bg-gray-800 text-white p-4 transition-color ${isNavOpen ? 'duration-500' : 'duration-300'}`}>
@@ -22,9 +45,9 @@ const Navbar = () => {
             </div>
 
             {/* Modal Navigation */}
-            <div className={`fixed top-0 right-0 h-full w-1/3 bg-gray-800 text-white p-4 transform ${isNavOpen ? 'translate-x-0 opacity-100 duration-500' : 'translate-x-full opacity-0 duration-300'}`}>
+            <div className={`fixed top-0 right-0 h-full w-1/3 bg-gray-800 text-white p-4 transform nav-modal ${isNavOpen ? 'translate-x-0 opacity-100 duration-500' : 'translate-x-full opacity-0 duration-300'}`}>
                 <div>
-                    <AiOutlineClose size={30} onClick={toggleNav} className="text-white hover:text-gray-300 float-right transition-transform duration-300 cursor-pointer" />
+                    <AiOutlineClose size={30} onClick={closeNav} className="text-white hover:text-gray-300 float-right transition-transform duration-300 cursor-pointer" />
                     <Link to="/" className="hover:text-gray-300 lg:text-3xl font-bold hidden lg:block">Kinder<span className='text-orange-500'>Garten</span></Link>
                 </div>
                 <ul className="flex flex-col space-y-4 mt-12 font-semibold text-xl">
@@ -42,10 +65,7 @@ const Navbar = () => {
                     </li>
                 </ul>
             </div>
-
-
         </nav>
     );
 };
-
 export default Navbar;
