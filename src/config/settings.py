@@ -61,7 +61,9 @@ THIRD_PARTY_APPS = [
 ]
 
 PROJECT_APPS = [
+    "account.apps.AccountConfig",
     "core.apps.CoreConfig",
+    "classwork.apps.ClassworkConfig",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS

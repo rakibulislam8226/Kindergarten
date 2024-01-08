@@ -48,6 +48,8 @@ urlpatterns = [
     ),
     # core
     path("api/v1", include("core.rest.urls")),
+    # classwork
+    path("api/v1/classwork", include("classwork.rest.urls")),
     # account
 ]
 
