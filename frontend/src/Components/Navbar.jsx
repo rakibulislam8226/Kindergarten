@@ -24,8 +24,8 @@ const Navbar = () => {
             {/* Modal Navigation */}
             <div className={`fixed top-0 right-0 h-full w-1/3 bg-gray-800 text-white p-4 transform ${isNavOpen ? 'translate-x-0 opacity-100 duration-500' : 'translate-x-full opacity-0 duration-300'}`}>
                 <div>
-                    <AiOutlineClose size={25} onClick={toggleNav} className="text-white hover:text-gray-300 float-right transition-transform duration-300 cursor-pointer" />
-                    <Link to="/" className="hover:text-gray-300 text-3xl font-bold">Kinder<span className='text-orange-500'>Garten</span></Link>
+                    <AiOutlineClose size={30} onClick={toggleNav} className="text-white hover:text-gray-300 float-right transition-transform duration-300 cursor-pointer" />
+                    <Link to="/" className="hover:text-gray-300 lg:text-3xl font-bold hidden lg:block">Kinder<span className='text-orange-500'>Garten</span></Link>
                 </div>
                 <ul className="flex flex-col space-y-4 mt-12 font-semibold text-xl">
                     <li>
@@ -42,6 +42,8 @@ const Navbar = () => {
                     </li>
                 </ul>
             </div>
+
+
         </nav>
     );
 };

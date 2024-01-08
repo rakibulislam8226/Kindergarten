@@ -231,7 +231,7 @@ REST_FRAMEWORK = {
         "rest_framework.throttling.AnonRateThrottle",  # For unauthenticated users only.
         "rest_framework.throttling.UserRateThrottle",  # For authenticated users.
     ],
-    "DEFAULT_THROTTLE_RATES": {"anon": "100/day", "user": "1000/day"},
+    "DEFAULT_THROTTLE_RATES": {"anon": "100000/day", "user": "10000000/day"},
     # drf spectacular
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
