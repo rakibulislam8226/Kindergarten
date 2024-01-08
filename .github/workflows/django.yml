@@ -19,4 +19,4 @@ jobs:
         
     - name: Run Django tests
       run: |
-        python src/manage.py test
+        python backend/manage.py test
