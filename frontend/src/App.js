@@ -1,7 +1,11 @@
+import Plan from "./Components/Classworks/Plan/Plan";
+import './index.css';
+
+
 function App() {
   return (
     <div className="App">
-      <h3>Hello React vs Django</h3>
+      <Plan />
     </div>
   );
 }
