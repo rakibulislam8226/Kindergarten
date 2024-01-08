@@ -61,7 +61,7 @@ const Navbar = () => {
                         <Link to="/plan" className="hover:text-gray-300 cursor-pointer">Plan</Link>
                     </li>
                     <li>
-                        <Link to="#" className="hover:text-gray-300 cursor-pointer">Contact</Link>
+                        <Link to="/contact" className="hover:text-gray-300 cursor-pointer">Contact</Link>
                     </li>
                 </ul>
             </div>

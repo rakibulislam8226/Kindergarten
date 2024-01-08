@@ -5,6 +5,7 @@ import Navbar from "./Components/Navbar";
 import Home from "./Components/Home";
 
 import './index.css';
+import { Contact } from './Components/Contact';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/plan" element={<Plan />} />
+          <Route path="/contact" element={<Contact />} />
 
           {/* Define other routes here, using the same pattern */}
 
