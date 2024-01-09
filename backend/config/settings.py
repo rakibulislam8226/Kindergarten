@@ -233,3 +233,9 @@ REST_FRAMEWORK = {
     ],
     "DEFAULT_THROTTLE_RATES": {"anon": "100000/day", "user": "10000000/day"},
 }
+
+# Admin site settings
+APP_SITE_HEADER = os.environ.get("APP_SITE_HEADER", "Kindergarten")
+APP_INDEX_TITLE = os.environ.get(
+    "APP_INDEX_TITLE", "Kindergarten Admin Portal"
+)

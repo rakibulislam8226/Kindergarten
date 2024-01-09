@@ -8,25 +8,29 @@ from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
-
-schema_view = get_schema_view(
-    openapi.Info(
-        title="XYZ API",
-        default_version="v1",
-        description="Test description",
-        terms_of_service="https://www.google.com/policies/terms/",
-        contact=openapi.Contact(email="rakibulislam8226@gmail.com"),
-        license=openapi.License(name="BSD License"),
-    ),
-    public=True,
-    permission_classes=(permissions.AllowAny,),
-)
-
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
     TokenVerifyView,
 )
+
+schema_view = get_schema_view(
+    openapi.Info(
+        title="Kindergarten API",
+        default_version="v1",
+        description="Kindergarten description",
+        terms_of_service="https://www.google.com/policies/terms/",
+        contact=openapi.Contact(email="rakibulislam8226@gmail.com"),
+        license=openapi.License(name="Kindergarten License"),
+    ),
+    public=True,
+    permission_classes=(permissions.AllowAny,),
+)
+
+# Admin Customization
+admin.site.site_header = settings.APP_SITE_HEADER
+admin.site.index_title = settings.APP_INDEX_TITLE
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
