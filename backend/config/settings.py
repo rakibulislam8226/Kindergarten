@@ -57,8 +57,8 @@ THIRD_PARTY_APPS = [
     "phonenumber_field",
     "simple_history",
     "axes",
-    "drf_spectacular",
     "corsheaders",
+    "drf_yasg",
 ]
 
 PROJECT_APPS = [
@@ -232,12 +232,4 @@ REST_FRAMEWORK = {
         "rest_framework.throttling.UserRateThrottle",  # For authenticated users.
     ],
     "DEFAULT_THROTTLE_RATES": {"anon": "100000/day", "user": "10000000/day"},
-    # drf spectacular
-    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
-}
-
-SPECTACULAR_SETTINGS = {
-    "TITLE": "XYZ API docs",
-    "DESCRIPTION": "XYZ descriptions.",
-    "VERSION": "1.0.0",
 }
