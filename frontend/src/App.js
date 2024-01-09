@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './index.css';
 
 import Plan from "./Components/Classworks/Plan/Plan";
 import Navbar from "./Components/Navbar";
 import Home from "./Components/Home";
-
-import './index.css';
 import { Contact } from './Components/Contact';
+
 
 function App() {
   return (

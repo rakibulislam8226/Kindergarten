@@ -23,7 +23,7 @@ const Plan = () => {
     };
 
     return (
-        <div className="container mx-auto p-4 lg:flex justify-between">
+        <div className="container mx-auto p-4 flex flex-col-reverse lg:flex-row lg:justify-between gap-3">
             <PlanList plans={plans} />
             <AddPlanForm onAddPlan={handleAddPlan} />
         </div>

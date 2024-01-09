@@ -6,7 +6,6 @@ const Navbar = () => {
     const [isNavOpen, setIsNavOpen] = useState(false);
 
     const toggleNav = (event) => {
-        // Prevent the click event from reaching the document when the modal is open
         if (!isNavOpen) {
             event.stopPropagation();
         }
@@ -33,7 +32,7 @@ const Navbar = () => {
     }, [isNavOpen]);
 
     return (
-        <nav className={`bg-gray-800 text-white p-4 transition-color ${isNavOpen ? 'duration-500' : 'duration-300'}`}>
+        <nav className={`bg-gray-800 text-white p-4 ${isNavOpen ? 'duration-500' : 'duration-300'}`}>
             <div className="container mx-auto flex justify-between items-center">
                 <div className="text-lg font-semibold">
                     <Link to="/" className="hover:text-gray-300 text-2xl lg:text-4xl">Kinder<span className='text-orange-500'>Garten</span></Link>
@@ -45,7 +44,7 @@ const Navbar = () => {
             </div>
 
             {/* Modal Navigation */}
-            <div className={`fixed top-0 right-0 h-full w-1/3 bg-gray-800 text-white p-4 transform nav-modal ${isNavOpen ? 'translate-x-0 opacity-100 duration-500' : 'translate-x-full opacity-0 duration-300'}`}>
+            <div className={`fixed top-0 right-0 h-full w-1/3 bg-gray-800 text-white p-4 transform nav-modal ${isNavOpen ? 'duration-500' : 'translate-x-full duration-300'}`}>
                 <div>
                     <AiOutlineClose size={30} onClick={closeNav} className="text-white hover:text-gray-300 float-right transition-transform duration-300 cursor-pointer" />
                     <Link to="/" className="hover:text-gray-300 lg:text-3xl font-bold hidden lg:block">Kinder<span className='text-orange-500'>Garten</span></Link>
